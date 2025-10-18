@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate") %>
+  <h3>Assets</h3>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
+    <% for(let User of allUsers){ %></br>
+    <a href="/Users/<%= user._id %>" class="user-link"></br>
+    <div class="card col listing-card">
+  <img src="<%= user.image %>" class="card-img-top" alt="User_image" style="height: 15rem" >
+  <div class="card-img-overlay"></div>
+  <div class="card-body">
+    <p class="card-text">
+      <b><%=listing.title %></b></br>
+       &#8377; <%=listing.price%> / night<br>
+    </p>
+  </div>
+</div> 
+</a>
+<% } %>
+</div>
+

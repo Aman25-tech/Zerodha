@@ -27,6 +27,12 @@ app.get('/', (req, res) => {
     res.send("Hi, I am root");
 });
 
+app.use("/users", async(req,res)=>{
+    const allUsers = await user.find({});
+    res.render("Users/index.ejs", {Users});
+}
+);
+
 app.listen(3030, () => {
     console.log("Server is listening on port 3030");
 });
