@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const ejsMate = require('ejs-mate');
 const app = express();
 const methodoverride = require("method-override");
+const User = require("./models/user")
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -28,8 +29,8 @@ app.get('/', (req, res) => {
 });
 
 app.use("/users", async(req,res)=>{
-    const allUsers = await user.find({});
-    res.render("Users/index.ejs", {Users});
+    const allUsers = await User.find({});
+    res.render("Users/index.ejs", {Users: allUsers});
 }
 );
 

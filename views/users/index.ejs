@@ -1,19 +1,50 @@
-<% layout("/layouts/boilerplate") %>
-  <h3>Assets</h3>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
-    <% for(let User of allUsers){ %></br>
-    <a href="/Users/<%= user._id %>" class="user-link"></br>
-    <div class="card col listing-card">
-  <img src="<%= user.image %>" class="card-img-top" alt="User_image" style="height: 15rem" >
-  <div class="card-img-overlay"></div>
-  <div class="card-body">
-    <p class="card-text">
-      <b><%=listing.title %></b></br>
-       &#8377; <%=listing.price%> / night<br>
-    </p>
-  </div>
-</div> 
-</a>
-<% } %>
-</div>
+ <% layout("/layouts/boilerplate") %>
 
+    <main class="homepage-content">
+        <section class="hero-section text-center py-5">
+            <div class="container">
+                <div class="hero-image mb-5">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlXxdzQIMAthgNx851zvVmF5jK_W9voyUAaQ&s" 
+                    alt="Zerodha Dashboard Screenshot" class="img-fluid">
+                    </div>
+                <h2>Invest in everything</h2>
+                <p class="lead mb-4">Online platform to invest in stocks, derivatives, mutual funds, ETFs, bonds, and more.</p>
+                <button class="btn btn-primary btn-lg custom-btn">Sign up for free</button>
+            </div>
+        </section>
+        <section class="pricing">
+            <div class="pricing-container">
+                <div class="pricing-header">
+                    <h2>Unbeatable pricing</h2>
+                    <p>We pioneered the concept of discount broking and price transparency in India. Flat fees and no hidden charges</p>
+                </div>
+                <div class="pricing-row">
+                    <div class="price-card">
+                        <img src="https://zerodha.com/static/images/pricing-eq.svg" alt="0">
+                        <div class="price-text">
+                            <p>Free account <br> opening</p>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <img src="https://zerodha.com/static/images/pricing-eq.svg" alt="0">
+                        <div class="price-text">
+                            <p>Free equity delivery <br> and direct mutual funds</p>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <img src="https://zerodha.com/static/images/other-trades.svg" alt="20">
+                        <div class="price-text">
+                            <p>Intraday and <br> F&O</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="pricing-footer">
+                    <a href="#" class="see-pricing">See pricing <i class="fas fa-arrow-right"></i></a>
+                </div>
+        </section>
+        </main>
+
+ </div>

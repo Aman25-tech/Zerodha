@@ -1,9 +1,237 @@
 body {
-     font-family: "Montserrat", sans-serif;
-     display: flex;
+    font-family: 'Montserrat', sans-serif !important;
+    display: flex;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    margin: 0 2rem;
+}
+
+.navbar {
+    height: 60px;
+    margin-top: 5px;
+    width: 100%;
+    background-color: white;
+    padding: 0 20px;
+    font-size: 14.4px !important;
+}
+
+.nav-links {
+    color: #666 !important;
+    padding: 0 20px;
+    font-weight: 800;
+}
+
+.navbar-brand {
+    padding-left: 12.33%;
+}
+
+.navbar-nav {
+    padding-right: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.f-info-socials i,a {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.f-info {
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+}
+
+.homepage-content {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.hero-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    max-width: 900px; 
+    margin: auto; 
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,.08); 
+}
+
+h2 {
+    font-size: 3.5rem; 
+    font-weight: 600;
+    color: #383838; 
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #666;
+}
+
+.custom-btn {
+    background-color: #387ED1;
+    border-color: #387ED1;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 0.2px; 
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.custom-btn:hover {
+    background-color: #1b1a1a !important; 
+    color: #fff !important;
+}
+
+.pricing {
+    width: 70%;
+    padding: 0px 60px 120px;
+    background-color: #fff;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pricing-header {
+    text-align:left;
+    margin-bottom: 60px;
+
+}
+
+.pricing-header h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #424242;
+}
+
+.pricing-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.pricing-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.price-card {
+    flex: 1;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.price-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.price-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-text p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.pricing-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.see-pricing {
+    display: inline-flex;
+    align-items: center;
+    color: #387ED1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.see-pricing i {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.see-pricing:hover {
+    color: #2c66b1;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .pricing-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .price-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .pricing-header h2 {
+        font-size: 2.4rem;
+    }
 }
