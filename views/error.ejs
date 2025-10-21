@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="error-container">
+    <div class="container py-5 text-center">
+        <h1 class="mb-4">Oops!</h1>
+        <p class="lead mb-4"><%= error %></p>
+        <a href="/" class="btn btn-primary">Go Home</a>
+    </div>
+</div>
+
+<style>
+    .error-container {
+        min-height: calc(100vh - 200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .error-container h1 {
+        font-size: 3.5rem;
+        color: #424242;
+    }
+    .error-container .lead {
+        color: #666;
+    }
+</style>

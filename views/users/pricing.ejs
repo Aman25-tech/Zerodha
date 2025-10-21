@@ -1,0 +1,170 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="pricing-page">
+    <div class="pricing-hero">
+        <div class="container">
+            <h1>Pricing</h1>
+            <p class="subtitle">Free equity delivery trading and ₹20 intraday and F&O trades</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="pricing-section">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="section-title">Account opening</h2>
+                    <div class="price-tag">₹0</div>
+                    <p class="description">One time account opening fee</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <p>Open a Zerodha account with zero fees. You only pay ₹200 per segment towards mandatory government charges for account activation.</p>
+                        <a href="/signup" class="btn-primary">Open an account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="section-title">Free equity delivery</h2>
+                    <div class="price-tag">₹0</div>
+                    <p class="description">All equity delivery investments</p>
+                    <ul class="feature-list">
+                        <li>Stocks</li>
+                        <li>IPOs</li>
+                        <li>Mutual funds</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://zerodha.com/static/images/pricing-eq.svg" alt="Free equity" class="pricing-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <h2 class="section-title">Intraday and F&O trades</h2>
+                    <div class="price-tag">₹20</div>
+                    <p class="description">Per executed order</p>
+                    <ul class="feature-list">
+                        <li>Equity intraday</li>
+                        <li>Futures & Options</li>
+                        <li>Currency futures</li>
+                        <li>Commodity futures</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <img src="https://zerodha.com/static/images/other-trades.svg" alt="Intraday trading" class="pricing-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>Brokerage calculator</h2>
+            <div class="calculator-box">
+                <div class="calculator-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="trade-type">Trade type</label>
+                            <select class="form-control" id="trade-type">
+                                <option value="equity-intraday">Equity Intraday</option>
+                                <option value="equity-delivery">Equity Delivery</option>
+                                <option value="futures">Futures</option>
+                                <option value="options">Options</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="buy-price">Buy price</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">₹</span>
+                                </div>
+                                <input type="number" class="form-control" id="buy-price" value="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sell-price">Sell price</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">₹</span>
+                                </div>
+                                <input type="number" class="form-control" id="sell-price" value="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" class="form-control" id="quantity" value="1">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-results">
+                    <div class="result-row">
+                        <div class="result-item">
+                            <span class="label">Turnover</span>
+                            <span class="value" id="turnover">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Brokerage</span>
+                            <span class="value" id="brokerage">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Other charges</span>
+                            <span class="value" id="other-charges">₹0</span>
+                        </div>
+                        <div class="result-item total">
+                            <span class="label">Total charges</span>
+                            <span class="value" id="total-charges">₹0</span>
+                        </div>
+                        <div class="result-item profit-loss">
+                            <span class="label">Final P&L</span>
+                            <span class="value" id="final-pnl">₹0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charges-breakdown mt-4">
+                <h3>Charges breakdown</h3>
+                <div class="calc-row">
+                    <div class="calc-type">
+                        <h4>Equity</h4>
+                        <p>NSE, BSE</p>
+                    </div>
+                    <table class="calc-table">
+                        <tr>
+                            <td>Intraday</td>
+                            <td>₹20 or 0.03% <span>(whichever is lower)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Delivery</td>
+                            <td>₹0</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="calc-row">
+                    <div class="calc-type">
+                        <h4>F&O</h4>
+                        <p>Futures and options</p>
+                    </div>
+                    <table class="calc-table">
+                        <tr>
+                            <td>Futures</td>
+                            <td>₹20 per executed order</td>
+                        </tr>
+                        <tr>
+                            <td>Options</td>
+                            <td>₹20 per executed order</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <p class="note">* All statutory charges for trading (STT, Transaction charges, Stamp duty, and GST) are applicable as per regulation.</p>
+        </div>
+
+        <%- include('../includes/calculator') %>
+    </div>
+</div>

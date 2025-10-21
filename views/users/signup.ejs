@@ -1,0 +1,69 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="signup-page">
+    <div class="signup-hero">
+        <div class="container">
+            <h1>Open a Zerodha account</h1>
+            <p class="subtitle">Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and F&O trades.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="signup-content">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="signup-form-container">
+                        <form class="signup-form">
+                            <div class="form-group">
+                                <label for="mobile">Mobile number</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">+91</span>
+                                    </div>
+                                    <input type="tel" class="form-control" id="mobile" pattern="[0-9]{10}" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" required>
+                                <div class="password-requirements">
+                                    <p>Password should contain at least:</p>
+                                    <ul>
+                                        <li>8 characters</li>
+                                        <li>1 uppercase letter</li>
+                                        <li>1 number</li>
+                                        <li>1 special character</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-continue">Continue →</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="signup-features">
+                        <div class="feature">
+                            <img src="https://zerodha.com/static/images/account-open.svg" alt="Instant account opening">
+                            <h3>Instant account opening</h3>
+                            <p>Complete your KYC and open your account in minutes.</p>
+                        </div>
+                        <div class="feature">
+                            <img src="https://zerodha.com/static/images/pricing-eq.svg" alt="Zero account charges">
+                            <h3>₹0 account opening</h3>
+                            <p>No charges for equity delivery and direct mutual funds.</p>
+                        </div>
+                        <div class="feature">
+                            <img src="https://zerodha.com/static/images/other-trades.svg" alt="Flat charges">
+                            <h3>₹20 flat per trade</h3>
+                            <p>Intraday and F&O trades at a flat rate per executed order.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

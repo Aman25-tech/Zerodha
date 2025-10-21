@@ -1,0 +1,56 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tradeType = document.getElementById('trade-type');
+        const buyPrice = document.getElementById('buy-price');
+        const sellPrice = document.getElementById('sell-price');
+        const quantity = document.getElementById('quantity');
+        
+        const turnoverElement = document.getElementById('turnover');
+        const brokerageElement = document.getElementById('brokerage');
+        const otherChargesElement = document.getElementById('other-charges');
+        const totalChargesElement = document.getElementById('total-charges');
+        const finalPnlElement = document.getElementById('final-pnl');
+
+        function calculateCharges() {
+            const buy = parseFloat(buyPrice.value) || 0;
+            const sell = parseFloat(sellPrice.value) || 0;
+            const qty = parseInt(quantity.value) || 0;
+            
+            const turnover = (buy + sell) * qty;
+            
+            let brokerage = 0;
+            if (tradeType.value === 'equity-delivery') {
+                brokerage = 0;
+            } else {
+                const brokeragePerSide = Math.min(20, turnover * 0.0003);
+                brokerage = brokeragePerSide * 2;
+            }
+            
+            const stt = tradeType.value === 'equity-delivery' ? turnover * 0.001 : turnover * 0.00025;
+            const exchangeCharges = turnover * 0.0000345;
+            const sebiCharges = turnover * 0.000001;
+            const gst = (brokerage + exchangeCharges) * 0.18;
+            const stampDuty = buy * qty * 0.00015;
+            
+            const otherCharges = stt + exchangeCharges + sebiCharges + gst + stampDuty;
+            const totalCharges = brokerage + otherCharges;
+            
+            const grossPnl = (sell - buy) * qty;
+            const netPnl = grossPnl - totalCharges;
+            
+            turnoverElement.textContent = `₹${turnover.toFixed(2)}`;
+            brokerageElement.textContent = `₹${brokerage.toFixed(2)}`;
+            otherChargesElement.textContent = `₹${otherCharges.toFixed(2)}`;
+            totalChargesElement.textContent = `₹${totalCharges.toFixed(2)}`;
+            finalPnlElement.textContent = `₹${netPnl.toFixed(2)}`;
+            
+            finalPnlElement.className = 'value ' + (netPnl >= 0 ? 'positive' : 'negative');
+        }
+
+        [tradeType, buyPrice, sellPrice, quantity].forEach(element => {
+            element.addEventListener('input', calculateCharges);
+        });
+
+        calculateCharges();
+    });
+</script>
