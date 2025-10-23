@@ -22,6 +22,7 @@
             if (tradeType.value === 'equity-delivery') {
                 brokerage = 0;
             } else {
+
                 const brokeragePerSide = Math.min(20, turnover * 0.0003);
                 brokerage = brokeragePerSide * 2;
             }

@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="dashboard-container">
+    <div class="watchlist-section fade-in">
+
+        <div class="watchlist-header">
+            <h3>My Watchlist</h3>
+            <button class="btn btn-sm btn-primary" id="addStockBtn">+ Add Stock</button>
+        </div>
+        <div id="watchlist-loader" class="loader">Loading...</div>
+        <div id="watchlist-error" class="error-message"></div>
+        <div class="watchlist-content" id="watchlistContent"></div>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="features-section fade-in delay-1">
+
+        <nav class="features-nav">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-tab="news">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-tab="charts">Charts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-tab="indicators">Indicators</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-tab="transactions">Transactions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-tab="orders">Orders</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="feature-content">
+            <div class="tab-content active" id="news">
+                <div id="news-loader" class="loader">Loading...</div>
+                <div id="news-error" class="error-message"></div>
+                <div id="news-content"></div>
+            </div>
+            <div class="tab-content" id="charts">
+            </div>
+            <div class="tab-content" id="indicators">
+            </div>
+            <div class="tab-content" id="transactions">
+            </div>
+            <div class="tab-content" id="orders">
+            </div>
+        </div>
+    </div>
+</div>
