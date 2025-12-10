@@ -1,0 +1,72 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="login-page">
+    <div class="login-hero fade-in">
+        <div class="container">
+            <h1>Login to Zerodha</h1>
+            <p class="subtitle">Access your trading account</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-form-container fade-in-left">
+                    <h2>Sign In</h2>
+                    
+                    <% if (error && error.length > 0) { %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong>
+                            <% error.forEach(err => { %>
+                                <div><%= err %></div>
+                            <% }); %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <% } %>
+
+                    <% if (success && success.length > 0) { %>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Success!</strong>
+                            <% success.forEach(msg => { %>
+                                <div><%= msg %></div>
+                            <% }); %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <% } %>
+
+                    <form class="login-form needs-validation" action="/login" method="POST" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                            <div class="invalid-feedback">
+                                Password is required.
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Login →</button>
+                    </form>
+
+                    <div class="divider text-center mb-3">
+                        <span>OR</span>
+                    </div>
+
+                    <a href="/auth/google" class="btn btn-outline-danger w-100 mb-3">
+                        <i class="fab fa-google"></i> Login with Google
+                    </a>
+
+                    <p class="signup-link text-center">
+                        Don't have an account? <a href="/signup">Sign up here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

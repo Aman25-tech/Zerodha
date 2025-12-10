@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="otp-page">
+    <div class="otp-hero fade-in">
+        <div class="container">
+            <h1>Verify Your Phone</h1>
+            <p class="subtitle">We'll send an OTP to your mobile number</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="otp-form-container fade-in-left">
+                    <h2>Phone Verification</h2>
+                    
+                    <% if (error && error.length > 0) { %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong>
+                            <% error.forEach(err => { %>
+                                <div><%= err %></div>
+                            <% }); %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <% } %>
+
+                    <% if (success && success.length > 0) { %>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Success!</strong>
+                            <% success.forEach(msg => { %>
+                                <div><%= msg %></div>
+                            <% }); %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <% } %>
+
+                    <form class="otp-form needs-validation" action="/send-otp" method="POST" novalidate>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Mobile Number</label>
+                            <input type="text" class="form-control" value="<%= user.mobile %>" disabled>
+                            <small class="form-text text-muted">We'll send an OTP to this number</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Send OTP</button>
+                    </form>
+
+                    <p class="text-center">
+                        <a href="/dashboard">Skip for now</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
